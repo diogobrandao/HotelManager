@@ -24,6 +24,9 @@ public class Room {
         this.empty = true;
     }
 
+    public int getRoomnumber() {
+        return this.roomNumber;
+    }
     @Override
     public String toString() {
         return "Room{" +

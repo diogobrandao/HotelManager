@@ -10,26 +10,32 @@ public class Guest {
         this.name = name;
     }
 
-    public String getName() {
-        return this.name;
-
-    }
-
-    public void guestChecksIn() {
-        roomNumber = hotel.checkIn(); // private mas dentro da class podemos aceder
 
 
-    }
 
-    public void guestChecksOut(){
-        roomNumber = hotel.checkOut(roomNumber);
-
-
-    }
-
-    public void setHotel(Hotel hotel){
+    public void guestChecksIn(Hotel hotel) {
+        if(roomNumber != -1){
+            System.out.println("You're already checked in");
+            return;
+        }
+        roomNumber = hotel.checkIn(); // its private but since its inside of the class it can be acessed
         this.hotel = hotel;
+
     }
+
+    public void guestChecksOut(Hotel hotel){
+        if(roomNumber == -1) {
+            System.out.println("You cant check out because you never checked in");
+            return;
+
+        }
+        roomNumber = hotel.checkOut(roomNumber);
+        this.hotel = hotel;
+
+
+    }
+
+
 
     @Override
     public String toString() {

@@ -39,7 +39,7 @@ public class Hotel {
         }
 
         room[available].occupy();
-        System.out.println("Room is occupied");
+        System.out.println("you got room number: " + room[available].getRoomnumber());
         return available;
     }
 
